@@ -1,3 +1,5 @@
 <h1>List of all products</h1>
 
-<%= render 'single_product', products: @products %>
+<% @products.each do |product| %>
+  <%= render 'single_product', product: product %>
+<% end %>
