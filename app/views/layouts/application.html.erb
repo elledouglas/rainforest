@@ -10,6 +10,15 @@
 
   <body>
 
+    <div>
+      <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p class="alert"><%= flash[:alert] %></p>
+      <% end %>
+    </div>
+    
     <nav>
       <ul>
         <li><%= link_to "Add new item", new_product_path %></li>
