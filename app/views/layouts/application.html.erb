@@ -9,6 +9,15 @@
   </head>
 
   <body>
+
+    <nav>
+      <ul>
+        <li><%= link_to "Add new item", new_product_path %></li>
+        <li><%= link_to 'Back to products', products_path %></li>
+      </ul>
+    </nav>
+
     <%= yield %>
+
   </body>
 </html>

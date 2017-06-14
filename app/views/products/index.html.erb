@@ -1,13 +1,13 @@
 <h1>List of all products</h1>
 
-<%=link_to "Add new item", new_product_path %>
+<div>
+  <% @products.each do |product| %>
 
-<% @products.each do |product| %>
+    <p>
+      <%= product.name %><br />
+      <%= link_to 'Details', product_path(product) %> |
+      <%= link_to 'Edit', edit_product_path(product) %>
+    </p>
 
-  <p>
-    <%= product.name %><br />
-    <%= link_to 'Details', product_path(product) %> |
-    <%= link_to 'Edit', edit_product_path(product) %>
-  </p>
-
-<% end %>
+  <% end %>
+</div>
