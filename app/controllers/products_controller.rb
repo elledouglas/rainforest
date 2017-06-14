@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+layout false
   def index
     @products = Product.all
   end
@@ -23,13 +23,22 @@ class ProductsController < ApplicationController
 
 
   def edit
-  @product = Product.find(params[:id])
+    @product = Product.find(params[:id])
 
   end
 
   def update
     @product = Product.find(params[:id])
-    @product.save
+    if @product.update(product_params)
+      redirect_to product_path
+    else
+      render new_product_path
+    end
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
   end
 
   def product_params

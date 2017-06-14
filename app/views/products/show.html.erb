@@ -1,4 +1,7 @@
 <h1>Product details</h1>
 
-<%= render 'single_product', product: @product %>
-<%= link_to 'Back to main menu', products_path %>
+<p>
+  <%= render 'single_product', product: @product %>
+  <%= link_to 'Back to Index', products_path %>
+  | <%= link_to 'Edit', edit_product_path(@product) %>
+</p>
